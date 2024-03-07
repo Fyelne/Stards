@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stards - Bedwars Stats</title>
+    <!--Icon-->
+    <link rel="icon" href="https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/BedWars-64.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="sidebar.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!--Website containing sidebar, player info and table with player stats-->
+    <!--Sandwich Sidebar with search and category-->
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar" class="active">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                </button>
+            </div>
+            <div class="p-4 pt-5">
+                <h1><a href="index.html" class="logo">Stards</a></h1>
+                <div class="mb-4">
+                    <h3 class="h6">Search a player</h3>
+                    <div class="form-group d-flex">
+                        <div class="icon"><span class="icon-paper-plane"></span></div>
+                        <input type="search" id="player_search" class="form-control" placeholder="Enter PlayerName">
+                    </div>
+                    <small id="player_search_error" class="form-text"></small>
+                </div>
+                <ul class="list-unstyled components mb-5">
+                    <li class="active">
+                        <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Player</a>
+                        <ul class="collapse list-unstyled" id="homeSubmenu">
+                            <li>
+                                <a href="#">Infos</a>
+                            </li>
+                            <li>
+                                <a href="#">Stats</a>
+                            </li>
+                            <li>
+                                <a href="#">Games</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Friend</a>
+                    </li>
+                    <li>
+                        <a href="#">Party</a>
+                    </li>
+                    <li>
+                        <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Guild</a>
+                        <ul class="collapse list-unstyled" id="pageSubmenu">
+                            <li>
+                                <a href="#">Info</a>
+                            </li>
+                            <li>
+                                <a href="#">Stats</a>
+                            </li>
+                            <li>
+                                <a href="#">Members</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">FullData</a>
+                    </li>
+                </ul>
+                
+            </div>
+        </nav>
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <!--Header-->
+            <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="text-center">Hypixel Bedwars Stats</h1>
+                        </div>
+                    </div>
+                </div>
+            </header>    
+            <!--Minecraft Player info-->
+            <div id="player-info">
+                <div id="player-info-wrapper">
+                    <div id="player-info-header">
+                        <div id="player-info-header-wrapper">
+                            <h1>Player Info</h1>
+                            <p>Here you can view player stats</p>
+                        </div>
+                    </div>
+                    <div id="player-info-content">
+                        <div id="player-info-content-wrapper">
+                            <!--Player Card with img and informations responsive-->
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-3">
+                                            <img id="player_skin" src="https://crafatar.com/renders/body/f1a266e6d4f747f28e0caff9acd5500e?overlay" alt="Player Avatar" class="img-fluid">
+                                        </div>
+                                        <div class="col-md-9">
+                                            <!--PlayerName with language flag-->
+                                            <h2 id="player_name" class="card-title">PlayerName <img src="https://flagsapi.com/GB/flat/32.png" alt="Player Language" class="img-fluid" width="32px" style="box-shadow: 0 0 8px 0px #00000050;"></h2>
+                                            <div class="row mt-3">
+                                                <div class="col-md-6">
+                                                    <p id="player_uuid"><strong>UUID:</strong> 00000000-0000-0000-0000-000000000000</p>
+                                                    <p id="player_rank"><strong>Rank:</strong> Player</p>
+                                                    <p id="first_login"><strong>First Join: </strong>01/01/1970</p>
+                                                    <p id="last_login"><strong>Last Join: </strong>01/01/1970</p>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <p id="player_friends"><strong>Friends:</strong> 0</p>
+                                                    <p id="player_guild"><strong>Guild:</strong> None</p>
+                                                    <p id="player_level"><strong>Level:</strong> 0</p>
+                                                    <p id="player_language"><strong>Language:</strong> English</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Player stats table-->
+            <div id="player-stats">
+                <div id="player-stats-wrapper">
+                    <div id="player-stats-header">
+                        <div id="player-stats-header-wrapper">
+                            <h1>Player Stats</h1>
+                            <p>Here you can view player stats</p>
+                        </div>
+                    </div>
+                    <div id="player-stats-content">
+                        <div id="player-stats-content-wrapper">
+                            <table>
+                                <tr>
+                                    <th>Stat</th>
+                                    <th>Value</th>
+                                </tr>
+                                <tr>
+                                    <td>Wins</td>
+                                    <td id="wins">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Losses</td>
+                                    <td id="losses">0</td>
+                                </tr>
+                                <tr>
+                                    <td>W/L</td>
+                                    <td id="win_rate">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Kills</td>
+                                    <td id="kills">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Deaths</td>
+                                    <td id="deaths">0</td>
+                                </tr>
+                                <tr>
+                                    <td>K/D</td>
+                                    <td id="kill_death_ratio">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Final Kills</td>
+                                    <td id="final_kills">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Final Deaths</td>
+                                    <td id="final_deaths">0</td>
+                                </tr>
+                                <tr>
+                                    <td>F/K</td>
+                                    <td id="final_kill_death_ratio">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Winstreak</td>
+                                    <td id="winstreak">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Bed Losses</td>
+                                    <td id="bed_losses">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Bed Destroyed</td>
+                                    <td id="bed_wins">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Games Played</td>
+                                    <td id="games_played">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Coins</td>
+                                    <td id="total">0</td>
+                                </tr>
+                                <tr>
+                                    <td>Level</td>
+                                    <td id="bedwars_level">0</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Player games table-->
+            <!--Hypixel Bedwars-->
+                <!-- TODO Recup ancienne stats et faire la diff-->
+            <div id="game-stats">
+                <div id="game-stats-wrapper">
+                    <div id="game-stats-header">
+                        <div id="game-stats-header-wrapper">
+                            <h1>Game Stats</h1>
+                            <p>Here you can view Game stats</p>
+                        </div>
+                    </div>
+                    <div id="game-stats-content">
+                        <div id="game-stats-content-wrapper">
+                            
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <th>Stat</th>
+                                        <th>Value</th>
+                                    </tr>
+                                    <tr>
+                                        <td>State</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Kills</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deaths</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>K/D</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Final Kill</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>F/K</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Winstreak</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bed Losses</td>
+                                        <td>0</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bed Destroyed</td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div id="footer-wrapper">
+                    <div id="footer-info">
+                        <div id="footer-info-wrapper">
+                            <h1>Info</h1>
+                            <p>Created by <a href="">@Fyelne</a></p>
+                            <p>Version 0.0.1</p>
+                            <p>API: <a href="https://api.hypixel.net/">Hypixel API</a></p>
+                        </div>
+                    </div>
+                    <div id="footer-license">
+                        <div id="footer-license-wrapper">
+                            <h1>License</h1>
+                            <p>MIT License</p>
+                            <p>See <a href="">LICENSE</a> for more information</p>
+                        </div>
+                    </div>
+                    <div id="footer-brand">
+                        <div id="footer-brand-wrapper">
+                            <h1>Fycorp</h1>
+                            <p>© 2020 Fycorp</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+        <script src="./script.js"></script>
+    </body>
+    </html>

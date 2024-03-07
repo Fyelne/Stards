@@ -1,0 +1,61 @@
+
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                <i class="fa fa-bars"></i>
+                <span class="sr-only">Toggle Menu</span>
+            </button>
+        </div>
+        <div class="p-4 pt-5">
+            <h1><a href="index.html" class="logo">Stards</a></h1>
+            <div class="mb-4">
+                <h3 class="h6">Search a player</h3>
+                <div class="form-group d-flex">
+                    <div class="icon"><span class="icon-paper-plane"></span></div>
+                    <input type="search" id="player_search" class="form-control" placeholder="Enter PlayerName">
+                </div>
+                <small id="player_search_error" class="form-text"></small>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Player</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="#">Infos</a>
+                        </li>
+                        <li>
+                            <a href="#">Stats</a>
+                        </li>
+                        <li>
+                            <a href="#">Games</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Friend</a>
+                </li>
+                <li>
+                    <a href="#">Party</a>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Guild</a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="#">Info</a>
+                        </li>
+                        <li>
+                            <a href="#">Stats</a>
+                        </li>
+                        <li>
+                            <a href="#">Members</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">FullData</a>
+                </li>
+            </ul>
+            
+        </div>
+    </nav>

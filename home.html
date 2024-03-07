@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stards - Home</title>
+    <link rel="icon" href="https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/BedWars-64.png">
+    <link rel="stylesheet" href="splashscreen.css">
+    <!-- fontawesome css  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+<body>
+    <div class="intro">
+        <h1 class="logo-header">
+            <span class="logo">Sta</span><span class="logo">rds</span>
+        </h1>
+    </div>
+    
+    <div class="main">
+        <!-- Search on click bar -->
+        <div class="container">
+            <!-- brand logo with search bar -->
+            <div class="brand">
+                <a href="home.html">
+                    <img src="https://hypixel.net/styles/hypixel-uix/hypixel/game-icons/BedWars-64.png" alt="logo" class="logo">
+                </a>
+                <form class="search" action="search.html" method="post">
+                    <!-- Brand logo -->
+                    <div class="search-box">
+                        <input type="text" placeholder="Search for a player" class="search-txt">
+                        <a class="search-btn">
+                            <i class="fas fa-search"></i>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <style>
+        .search {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #2f3640;
+            height: 40px;
+            border-radius: 40px;
+            padding: 10px;
+        }
+        
+        .search-box {
+            position: relative;
+            width: 100%;
+        }
+        
+        .search-txt {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: none;
+            outline: none;
+            float: left;
+            padding: 0;
+            color: white;
+            font-size: 16px;
+            line-height: 40px;
+            display: none;
+            transition: 0.4s;
+        }
+        
+        .search-btn {
+            color: #e84118;
+            float: right;
+            width: 40px;
+            height: 40px;
+            transform: translateY(-10px);
+            border-radius: 50%;
+            background: #2f3640;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: 0.4s;
+        }
+
+        .search-box.active .search-txt {
+            width: 240px;
+            padding: 0 6px;
+            display: block;
+        }
+        
+        .search-box:hover > .search-btn {
+            background: #e84118;
+        }
+        
+        .search-box:hover > .search-txt {
+            width: 200px;
+            padding: 0 6px;
+        }
+        
+        .search-btn:hover {
+            background: #e84118;
+        }
+        
+        .search-btn > i {
+            color: #e84118;
+        }
+    </style>
+    <script>
+        const searchBtn = document.querySelector(".search-btn");
+        const search = document.querySelector(".search");
+        const searchBox = document.querySelector(".search-box");
+        searchBtn.onclick = () => {
+            searchBox.classList.toggle("active");
+            searchBox.focus();
+            searchBtn.style.backgroundColor = "transparent";
+
+        }
+    </script>
+    
+
+    </style>
+    <script src="splashscreen.js"></script>
+</body>
+</html>

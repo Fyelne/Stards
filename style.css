@@ -1,0 +1,185 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+img[src="https://cdn.000webhost.com/000webhost..." ]
+{
+width: 0 !important;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fafafa;
+}
+
+input[type="search"]::-webkit-search-cancel-button {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+    -webkit-appearance: none;
+    height: 24px;
+    width: 24px;
+    margin-left: .4em;
+    cursor: pointer;
+    }
+
+#player-info, #player-stats, #game-stats {
+
+    margin: 40px 80px;
+}
+
+button:focus{
+    box-shadow: none !important;
+}
+
+/*Beautiful Table css*/
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th, td {
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* End of Beautiful Table css*/
+
+/*Beautiful Button css*/
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+/* End of Beautiful Button css*/
+
+/*Beautiful Form css*/
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+
+/* End of Beautiful Form css*/
+
+/*Beautiful Footer css*/
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+}
+
+/* End of Beautiful Footer css*/
+
+/*Beautiful Header css*/
+.header {
+    background-color: #4CAF50;
+    padding: 30px;
+    text-align: center;
+    font-size: 35px;
+    color: white;
+}
+
+/* End of Beautiful Header css*/
+
+/*Footer*/
+#footer {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px 0;
+    margin-top: 20px;
+    margin-left: 0;
+}
+#footer-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+#footer-info {
+    flex: 1;
+}
+#footer-info-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#footer-info-wrapper h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+#footer-info-wrapper p {
+    margin: 0;
+}
+#footer-license {
+    flex: 1;
+}
+#footer-license-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#footer-license-wrapper h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+#footer-license-wrapper p {
+    margin: 0;
+}
+#footer-brand {
+    flex: 1;
+}
+#footer-brand-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+#footer-brand-wrapper h1 {
+    font-size: 1.5rem;
+    margin: 0;
+}
+#footer-brand-wrapper p {
+    margin: 0;
+}
+
+
+
